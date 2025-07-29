@@ -343,3 +343,42 @@ class ChessVar:
         :param column: int, column of the desired piece
         :return: int, piece at the given location"""
         return self._board[row][column]
+
+def validate_input(start_pos, end_pos):
+    start_pos = start_pos.lower()
+    end_pos = end_pos.lower()
+
+    # check for appropriate letter
+    if start_pos[0] not in ("a", "b", "c", "d", "e", "f", "g", "h"):
+        print("Please specify a valid square to move from.")
+        return False
+    if end_pos[0] not in ("a", "b", "c", "d", "e", "f", "g", "h"):
+        print("Please specify a valid square to move to.")
+        return False
+    
+    # check for appropriate number
+    if start_pos[1] not in (1, 2, 3, 4, 5, 6, 7, 8):
+        print("Please specify a valid square to move from.")
+        return False
+    if end_pos[1] not in (1, 2, 3, 4, 5, 6, 7, 8):
+        print("Please specify a valid square to move to.")
+        return False
+
+if __name__ == "__main__":
+    game = ChessVar()
+
+    while True: 
+        game.print_board()
+        print("Game state:", game.get_game_state())
+        print("Current player:", game.get_current_player())
+
+        user_move = input("Enter your move (e.g., e2 to e4): ")
+        start_pos, end_pos = user_move.split(" to ")
+
+        if validate_input(start_pos, end_pos) is False:
+            continue
+
+        game.make_move(start_pos, end_pos)
+
+        if game.get_game_state() != "UNFINISHED":
+            break
