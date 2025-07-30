@@ -372,7 +372,7 @@ if __name__ == "__main__":
         print("Game state:", game.get_game_state())
         print("Current player:", game.get_current_player())
 
-        user_move = input("Enter your move (e.g., e2 to e4): ")
+        user_move = input("Enter your move (as 'e2 to e4'): ")
         start_pos, end_pos = user_move.split(" to ")
 
         if validate_input(start_pos, end_pos) is False:
