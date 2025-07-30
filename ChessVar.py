@@ -381,4 +381,5 @@ if __name__ == "__main__":
         game.make_move(start_pos, end_pos)
 
         if game.get_game_state() != "UNFINISHED":
+            print(f"WINNER: {game.get_game_state()}")
             break
