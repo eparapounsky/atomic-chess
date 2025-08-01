@@ -15,3 +15,6 @@ A move that would result in both kings being destroyed is not allowed.
 
 ### Victory Condition:
 The game ends immediately when a king is destroyed; this counts as a capture.
+
+## Preview
+<img width="500" height="444" alt="Screenshot 2025-07-31 182522" src="https://github.com/user-attachments/assets/173ebf91-412e-4f94-b180-4f9dc636087b" />
